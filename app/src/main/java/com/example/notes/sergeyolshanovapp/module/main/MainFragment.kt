@@ -26,6 +26,7 @@ class MainFragment : Fragment() {
 
     private fun subscribeFirstButton() {
         menuBinding?.button1?.setOnClickListener {
+
         }
     }
 
