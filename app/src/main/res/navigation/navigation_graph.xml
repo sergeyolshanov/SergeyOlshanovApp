@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.notes.sergeyolshanovapp.module.main.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" />
+    <fragment
+        android:id="@+id/noteFragment"
+        android:name="com.example.notes.sergeyolshanovapp.module.appnotes.NoteFragment"
+        android:label="fragment_note"
+        tools:layout="@layout/fragment_note" >
+        <action
+            android:id="@+id/action_noteFragment_to_mainNoteFragment"
+            app:destination="@id/mainNoteFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainNoteFragment"
+        android:name="com.example.notes.sergeyolshanovapp.module.appnotes.MainNoteFragment"
+        android:label="fragment_main_note"
+        tools:layout="@layout/fragment_main_note" >
+        <action
+            android:id="@+id/action_mainNoteFragment_to_startNoteFragment"
+            app:destination="@id/startNoteFragment" />
+        <action
+            android:id="@+id/action_mainNoteFragment_to_addNewNoteFragment"
+            app:destination="@id/addNewNoteFragment" />
+        <action
+            android:id="@+id/action_mainNoteFragment_to_noteFragment"
+            app:destination="@id/noteFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addNewNoteFragment"
+        android:name="com.example.notes.sergeyolshanovapp.module.appnotes.AddNewNoteFragment"
+        android:label="fragment_add_new_note"
+        tools:layout="@layout/fragment_add_new_note" >
+        <action
+            android:id="@+id/action_addNewNoteFragment_to_mainNoteFragment"
+            app:destination="@id/mainNoteFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/startNoteFragment"
+        android:name="com.example.notes.sergeyolshanovapp.module.appnotes.StartNoteFragment"
+        android:label="fragment_start_note"
+        tools:layout="@layout/fragment_start_note" >
+        <action
+            android:id="@+id/action_startNoteFragment_to_mainNoteFragment"
+            app:destination="@id/mainNoteFragment" />
+    </fragment>
+</navigation>
