@@ -45,7 +45,7 @@
     </fragment>
     <fragment
         android:id="@+id/startNoteFragment"
-        android:name="com.example.notes.sergeyolshanovapp.module.appnotes.StartNoteFragment"
+        android:name="com.example.notes.sergeyolshanovapp.module.appnotes.start.StartNoteFragment"
         android:label="fragment_start_note"
         tools:layout="@layout/fragment_start_note" >
         <action
