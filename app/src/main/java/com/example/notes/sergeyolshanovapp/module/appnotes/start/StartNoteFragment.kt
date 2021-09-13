@@ -6,7 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
+import com.example.notes.sergeyolshanovapp.R
 import com.example.notes.sergeyolshanovapp.databinding.FragmentStartNoteBinding
+import com.example.notes.utilits.APP_ACTIVITY
 import com.example.notes.utilits.TYPE_ROOM
 
 class StartNoteFragment : Fragment() {
@@ -32,7 +34,10 @@ class StartNoteFragment : Fragment() {
     private fun initialisation() {
         mViewModel = ViewModelProvider(this).get(StartNoteViewModel::class.java)
         mBinding?.buttonRoom?.setOnClickListener {
-            mViewModel?.initDatabase(TYPE_ROOM)
+            mViewModel?.initDatabase(TYPE_ROOM) {
+                APP_ACTIVITY?.navController?.navigate(R.id.action_startNoteFragment_to_mainNoteFragment)
+
+            }
         }
     }
 
