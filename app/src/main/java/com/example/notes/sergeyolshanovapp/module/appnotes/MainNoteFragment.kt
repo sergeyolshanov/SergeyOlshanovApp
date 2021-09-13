@@ -19,9 +19,6 @@ class MainNoteFragment : Fragment() {
     ): View? {
         super.onCreateView(inflater, container, savedInstanceState)
         binding = FragmentMainBinding.inflate(layoutInflater, container, false)
-
-        mBinding?.button1?.setOnClickListener {  }
-
         return mBinding?.root
     }
 

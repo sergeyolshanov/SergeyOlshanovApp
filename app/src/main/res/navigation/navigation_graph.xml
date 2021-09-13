@@ -9,14 +9,18 @@
         android:id="@+id/mainFragment"
         android:name="com.example.notes.sergeyolshanovapp.module.main.MainFragment"
         android:label="fragment_main"
-        tools:layout="@layout/fragment_main" />
-    <fragment
-        android:id="@+id/noteFragment"
-        android:name="com.example.notes.sergeyolshanovapp.module.appnotes.NoteFragment"
-        android:label="fragment_note"
-        tools:layout="@layout/fragment_note" >
+        tools:layout="@layout/fragment_main" >
         <action
-            android:id="@+id/action_noteFragment_to_mainNoteFragment"
+            android:id="@+id/action_mainFragment_to_startNoteFragment"
+            app:destination="@id/startNoteFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/startNoteFragment"
+        android:name="com.example.notes.sergeyolshanovapp.module.appnotes.start.StartNoteFragment"
+        android:label="fragment_start_note"
+        tools:layout="@layout/fragment_start_note" >
+        <action
+            android:id="@+id/action_startNoteFragment_to_mainNoteFragment"
             app:destination="@id/mainNoteFragment" />
     </fragment>
     <fragment
@@ -44,12 +48,12 @@
             app:destination="@id/mainNoteFragment" />
     </fragment>
     <fragment
-        android:id="@+id/startNoteFragment"
-        android:name="com.example.notes.sergeyolshanovapp.module.appnotes.start.StartNoteFragment"
-        android:label="fragment_start_note"
-        tools:layout="@layout/fragment_start_note" >
+        android:id="@+id/noteFragment"
+        android:name="com.example.notes.sergeyolshanovapp.module.appnotes.NoteFragment"
+        android:label="fragment_note"
+        tools:layout="@layout/fragment_note" >
         <action
-            android:id="@+id/action_startNoteFragment_to_mainNoteFragment"
+            android:id="@+id/action_noteFragment_to_mainNoteFragment"
             app:destination="@id/mainNoteFragment" />
     </fragment>
 </navigation>
