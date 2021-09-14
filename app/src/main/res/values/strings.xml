@@ -5,4 +5,5 @@
     <string name="start_button_room">ROOM</string>
     <string name="title">Заметки</string>
     <string name="main_title">Applications</string>
+    <string name="toast_enter_name">Введите имя заметки</string>
 </resources>

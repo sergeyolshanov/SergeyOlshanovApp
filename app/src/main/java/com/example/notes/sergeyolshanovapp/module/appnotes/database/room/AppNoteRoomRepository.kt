@@ -11,9 +11,13 @@ class AppNoteRoomRepository(private val appNoteRoomDao: AppNoteRoomDao) : Databa
 
     override suspend fun insert(note: AppNote, onSuccess: () -> Unit) {
         appNoteRoomDao.insert(note)
+        onSuccess()
     }
 
     override suspend fun delete(note: AppNote, onSuccess: () -> Unit) {
         appNoteRoomDao.delete(note)
+        onSuccess()
     }
+
+
 }

@@ -28,11 +28,15 @@ class MainFragment : Fragment() {
     }
 
 
-
     private fun subscribeFirstButton() {
         menuBinding?.appNotesButton?.setOnClickListener {
             APP_ACTIVITY?.navController?.navigate(R.id.action_mainFragment_to_startNoteFragment)
         }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        binding = null
     }
 
 }
