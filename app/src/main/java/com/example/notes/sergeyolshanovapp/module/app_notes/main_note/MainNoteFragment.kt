@@ -58,4 +58,12 @@ class MainNoteFragment : Fragment() {
         mRecyclerView?.adapter = null
     }
 
+    companion object {
+        fun click(note: AppNote){
+            val bundle = Bundle()
+            bundle.putSerializable("note", note)
+            APP_ACTIVITY?.navController?.navigate(R.id.action_mainNoteFragment_to_noteFragment, bundle)
+        }
+    }
+
 }

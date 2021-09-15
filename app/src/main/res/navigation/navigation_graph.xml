@@ -49,7 +49,7 @@
     </fragment>
     <fragment
         android:id="@+id/noteFragment"
-        android:name="com.example.notes.sergeyolshanovapp.module.app_notes.NoteFragment"
+        android:name="com.example.notes.sergeyolshanovapp.module.app_notes.note.NoteFragment"
         android:label="fragment_note"
         tools:layout="@layout/fragment_note" >
         <action
