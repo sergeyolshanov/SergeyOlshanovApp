@@ -1,4 +1,4 @@
-package com.example.notes.sergeyolshanovapp.module.appnotes.model
+package com.example.notes.sergeyolshanovapp.module.app_notes.model
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

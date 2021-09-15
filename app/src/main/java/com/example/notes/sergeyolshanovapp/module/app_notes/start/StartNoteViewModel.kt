@@ -1,10 +1,9 @@
-package com.example.notes.sergeyolshanovapp.module.appnotes.start
+package com.example.notes.sergeyolshanovapp.module.app_notes.start
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.ViewModel
-import com.example.notes.sergeyolshanovapp.module.appnotes.database.room.AppNoteRoomDatabase
-import com.example.notes.sergeyolshanovapp.module.appnotes.database.room.AppNoteRoomRepository
+import com.example.notes.sergeyolshanovapp.module.app_notes.database.room.AppNoteRoomDatabase
+import com.example.notes.sergeyolshanovapp.module.app_notes.database.room.AppNoteRoomRepository
 import com.example.notes.utilits.REPOSITORY
 import com.example.notes.utilits.TYPE_ROOM
 

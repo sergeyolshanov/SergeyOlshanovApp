@@ -6,4 +6,5 @@
     <string name="title">Заметки</string>
     <string name="main_title">Applications</string>
     <string name="toast_enter_name">Введите имя заметки</string>
+    <string name="list_notes">List notes</string>
 </resources>

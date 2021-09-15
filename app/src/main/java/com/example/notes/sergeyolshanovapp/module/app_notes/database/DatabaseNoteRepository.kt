@@ -1,7 +1,7 @@
-package com.example.notes.sergeyolshanovapp.module.appnotes.database
+package com.example.notes.sergeyolshanovapp.module.app_notes.database
 
 import androidx.lifecycle.LiveData
-import com.example.notes.sergeyolshanovapp.module.appnotes.model.AppNote
+import com.example.notes.sergeyolshanovapp.module.app_notes.model.AppNote
 
 interface DatabaseNoteRepository {
 
