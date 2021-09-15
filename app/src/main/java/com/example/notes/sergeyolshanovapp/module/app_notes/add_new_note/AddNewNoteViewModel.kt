@@ -11,6 +11,7 @@ import kotlinx.coroutines.withContext
 
 class AddNewNoteViewModel(application: Application) : AndroidViewModel(application) {
 
+    /** Добавляем заметку в базу */
     fun insert(note: AppNote, onSuccess:() -> Unit) =
         viewModelScope.launch(Dispatchers.IO) {
             REPOSITORY?.insert(note) {
