@@ -11,6 +11,7 @@ import kotlinx.coroutines.withContext
 
 class NoteViewModel(application: Application) : AndroidViewModel(application) {
 
+    /** Удаляем заметку из базы */
     fun delete(note: AppNote, onSuccess:() -> Unit) =
         viewModelScope.launch(Dispatchers.IO) {
             REPOSITORY?.delete(note) {

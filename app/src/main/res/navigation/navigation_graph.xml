@@ -2,7 +2,7 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main_graph"
+    android:id="@+id/navigation_graph"
     app:startDestination="@id/mainFragment">
 
     <fragment
@@ -21,7 +21,9 @@
         tools:layout="@layout/fragment_start_note" >
         <action
             android:id="@+id/action_startNoteFragment_to_mainNoteFragment"
-            app:destination="@id/mainNoteFragment" />
+            app:destination="@id/mainNoteFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/startNoteFragment" />
     </fragment>
     <fragment
         android:id="@+id/mainNoteFragment"
@@ -30,7 +32,9 @@
         tools:layout="@layout/fragment_main_note" >
         <action
             android:id="@+id/action_mainNoteFragment_to_startNoteFragment"
-            app:destination="@id/startNoteFragment" />
+            app:destination="@id/startNoteFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/startNoteFragment" />
         <action
             android:id="@+id/action_mainNoteFragment_to_addNewNoteFragment"
             app:destination="@id/addNewNoteFragment" />
@@ -45,7 +49,9 @@
         tools:layout="@layout/fragment_add_new_note" >
         <action
             android:id="@+id/action_addNewNoteFragment_to_mainNoteFragment"
-            app:destination="@id/mainNoteFragment" />
+            app:destination="@id/mainNoteFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/startNoteFragment" />
     </fragment>
     <fragment
         android:id="@+id/noteFragment"
@@ -54,6 +60,8 @@
         tools:layout="@layout/fragment_note" >
         <action
             android:id="@+id/action_noteFragment_to_mainNoteFragment"
-            app:destination="@id/mainNoteFragment" />
+            app:destination="@id/mainNoteFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/startNoteFragment" />
     </fragment>
 </navigation>
