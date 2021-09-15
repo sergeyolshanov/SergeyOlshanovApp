@@ -1,4 +1,4 @@
-package com.example.notes.sergeyolshanovapp.module.appnotes.main_note
+package com.example.notes.sergeyolshanovapp.module.app_notes.main_note
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

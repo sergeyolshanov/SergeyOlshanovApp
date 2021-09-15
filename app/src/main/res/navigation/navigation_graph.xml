@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/startNoteFragment"
-        android:name="com.example.notes.sergeyolshanovapp.module.appnotes.start.StartNoteFragment"
+        android:name="com.example.notes.sergeyolshanovapp.module.app_notes.start.StartNoteFragment"
         android:label="fragment_start_note"
         tools:layout="@layout/fragment_start_note" >
         <action
@@ -25,7 +25,7 @@
     </fragment>
     <fragment
         android:id="@+id/mainNoteFragment"
-        android:name="com.example.notes.sergeyolshanovapp.module.appnotes.main_note.MainNoteFragment"
+        android:name="com.example.notes.sergeyolshanovapp.module.app_notes.main_note.MainNoteFragment"
         android:label="fragment_main_note"
         tools:layout="@layout/fragment_main_note" >
         <action
@@ -40,7 +40,7 @@
     </fragment>
     <fragment
         android:id="@+id/addNewNoteFragment"
-        android:name="com.example.notes.sergeyolshanovapp.module.appnotes.add_new_note.AddNewNoteFragment"
+        android:name="com.example.notes.sergeyolshanovapp.module.app_notes.add_new_note.AddNewNoteFragment"
         android:label="fragment_add_new_note"
         tools:layout="@layout/fragment_add_new_note" >
         <action
@@ -49,7 +49,7 @@
     </fragment>
     <fragment
         android:id="@+id/noteFragment"
-        android:name="com.example.notes.sergeyolshanovapp.module.appnotes.NoteFragment"
+        android:name="com.example.notes.sergeyolshanovapp.module.app_notes.NoteFragment"
         android:label="fragment_note"
         tools:layout="@layout/fragment_note" >
         <action

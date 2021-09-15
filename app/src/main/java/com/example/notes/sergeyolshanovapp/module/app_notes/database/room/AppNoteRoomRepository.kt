@@ -1,8 +1,8 @@
-package com.example.notes.sergeyolshanovapp.module.appnotes.database.room
+package com.example.notes.sergeyolshanovapp.module.app_notes.database.room
 
 import androidx.lifecycle.LiveData
-import com.example.notes.sergeyolshanovapp.module.appnotes.database.DatabaseNoteRepository
-import com.example.notes.sergeyolshanovapp.module.appnotes.model.AppNote
+import com.example.notes.sergeyolshanovapp.module.app_notes.database.DatabaseNoteRepository
+import com.example.notes.sergeyolshanovapp.module.app_notes.model.AppNote
 
 class AppNoteRoomRepository(private val appNoteRoomDao: AppNoteRoomDao) : DatabaseNoteRepository {
 

@@ -1,10 +1,10 @@
-package com.example.notes.sergeyolshanovapp.module.appnotes.database.room
+package com.example.notes.sergeyolshanovapp.module.app_notes.database.room
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.example.notes.sergeyolshanovapp.module.appnotes.model.AppNote
+import com.example.notes.sergeyolshanovapp.module.app_notes.model.AppNote
 
 @Database(entities = [AppNote::class], version = 1)
 abstract class AppNoteRoomDatabase : RoomDatabase(){

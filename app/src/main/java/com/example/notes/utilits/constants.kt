@@ -1,7 +1,7 @@
 package com.example.notes.utilits
 
 import com.example.notes.sergeyolshanovapp.MainActivity
-import com.example.notes.sergeyolshanovapp.module.appnotes.database.DatabaseNoteRepository
+import com.example.notes.sergeyolshanovapp.module.app_notes.database.DatabaseNoteRepository
 
 var APP_ACTIVITY: MainActivity? = null
 var REPOSITORY: DatabaseNoteRepository? = null

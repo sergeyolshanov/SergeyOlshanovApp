@@ -1,9 +1,8 @@
-package com.example.notes.sergeyolshanovapp.module.appnotes.database.room
+package com.example.notes.sergeyolshanovapp.module.app_notes.database.room
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
-import com.example.notes.sergeyolshanovapp.module.appnotes.model.AppNote
-import com.google.android.material.circularreveal.CircularRevealHelper
+import com.example.notes.sergeyolshanovapp.module.app_notes.model.AppNote
 
 @Dao
 interface AppNoteRoomDao {
