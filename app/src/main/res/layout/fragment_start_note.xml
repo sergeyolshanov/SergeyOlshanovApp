@@ -25,8 +25,56 @@
         app:layout_constraintTop_toBottomOf="@+id/start_note_label"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_margin="@dimen/app_margin"
+        android:layout_margin="@dimen/app_margin" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_firebase"
+        android:layout_width="@dimen/button_width"
+        android:layout_height="wrap_content"
+        android:text="@string/start_button_firebase"
+        app:layout_constraintTop_toBottomOf="@+id/button_room"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="@dimen/app_margin" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group_firebase"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:constraint_referenced_ids="input_email, input_password, button_login"
         />
+
+    <EditText
+        android:id="@+id/input_email"
+        android:layout_width="@dimen/button_width"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/app_margin"
+        android:hint="@string/email_hint"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_firebase" />
+
+    <EditText
+        android:id="@+id/input_password"
+        android:layout_width="@dimen/button_width"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/app_margin"
+        android:hint="@string/password_hint"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/input_email" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_login"
+        android:layout_width="@dimen/button_width"
+        android:layout_height="wrap_content"
+        android:text="@string/start_button_login"
+        app:layout_constraintTop_toBottomOf="@+id/input_password"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="@dimen/app_margin" />
 
 
 

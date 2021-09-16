@@ -7,6 +7,7 @@ import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.example.notes.sergeyolshanovapp.databinding.ActivityMainBinding
 import com.example.notes.utilits.APP_ACTIVITY
+import com.google.firebase.FirebaseApp
 
 
 class MainActivity : AppCompatActivity() {
