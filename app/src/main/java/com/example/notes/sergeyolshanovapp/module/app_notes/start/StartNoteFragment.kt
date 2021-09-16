@@ -8,8 +8,7 @@ import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import com.example.notes.sergeyolshanovapp.R
 import com.example.notes.sergeyolshanovapp.databinding.FragmentStartNoteBinding
-import com.example.notes.utilits.APP_ACTIVITY
-import com.example.notes.utilits.TYPE_ROOM
+import com.example.notes.utilits.*
 
 class StartNoteFragment : Fragment() {
 
@@ -38,6 +37,25 @@ class StartNoteFragment : Fragment() {
                 APP_ACTIVITY?.navController?.navigate(R.id.action_startNoteFragment_to_mainNoteFragment)
 
             }
+        }
+
+        mBinding?.buttonFirebase?.setOnClickListener {
+            mBinding?.groupFirebase?.visibility = View.VISIBLE
+            mBinding?.buttonLogin?.setOnClickListener {
+                val inputEmail = mBinding?.inputEmail?.text.toString()
+                val inputPassword = mBinding?.inputPassword?.text.toString()
+                if(inputEmail.isNotEmpty() && inputPassword.isNotEmpty()) {
+                    EMAIL = inputEmail
+                    PASSWORD = inputPassword
+                    mViewModel?.initDatabase(TYPE_FIREBASE) {
+                        showToast("INIT OK")
+                        //APP_ACTIVITY?.navController?.navigate(R.id.action_startNoteFragment_to_mainNoteFragment)
+                    }
+                } else {
+                    showToast(getString(R.string.toast_wrong_enter))
+                }
+            }
+
         }
     }
 
