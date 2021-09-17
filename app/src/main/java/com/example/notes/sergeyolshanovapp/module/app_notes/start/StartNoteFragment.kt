@@ -48,8 +48,7 @@ class StartNoteFragment : Fragment() {
                     EMAIL = inputEmail
                     PASSWORD = inputPassword
                     mViewModel?.initDatabase(TYPE_FIREBASE) {
-                        showToast("INIT OK")
-                        //APP_ACTIVITY?.navController?.navigate(R.id.action_startNoteFragment_to_mainNoteFragment)
+                        APP_ACTIVITY?.navController?.navigate(R.id.action_startNoteFragment_to_mainNoteFragment)
                     }
                 } else {
                     showToast(getString(R.string.toast_wrong_enter))
