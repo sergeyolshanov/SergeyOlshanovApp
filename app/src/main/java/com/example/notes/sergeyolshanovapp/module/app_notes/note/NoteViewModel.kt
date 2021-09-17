@@ -15,11 +15,12 @@ class NoteViewModel(application: Application) : AndroidViewModel(application) {
     fun delete(note: AppNote, onSuccess:() -> Unit) =
         viewModelScope.launch(Dispatchers.IO) {
             REPOSITORY?.delete(note) {
-                launch{
+                onSuccess()
+                /*launch{
                     withContext(Dispatchers.Main) {
                         onSuccess()
                     }
-                }
+                }*/
             }
         }
 }
