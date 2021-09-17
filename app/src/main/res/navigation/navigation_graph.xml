@@ -12,7 +12,8 @@
         tools:layout="@layout/fragment_main" >
         <action
             android:id="@+id/action_mainFragment_to_startNoteFragment"
-            app:destination="@id/startNoteFragment" />
+            app:destination="@id/startNoteFragment"
+            app:enterAnim="@anim/slide_right_to_left_enter" />
     </fragment>
     <fragment
         android:id="@+id/startNoteFragment"
@@ -22,6 +23,7 @@
         <action
             android:id="@+id/action_startNoteFragment_to_mainNoteFragment"
             app:destination="@id/mainNoteFragment"
+            app:enterAnim="@anim/slide_right_to_left_enter"
             app:launchSingleTop="true"
             app:popUpTo="@id/startNoteFragment" />
     </fragment>
@@ -33,14 +35,17 @@
         <action
             android:id="@+id/action_mainNoteFragment_to_startNoteFragment"
             app:destination="@id/startNoteFragment"
+            app:enterAnim="@android:anim/slide_in_left"
             app:launchSingleTop="true"
             app:popUpTo="@id/startNoteFragment" />
         <action
             android:id="@+id/action_mainNoteFragment_to_addNewNoteFragment"
-            app:destination="@id/addNewNoteFragment" />
+            app:destination="@id/addNewNoteFragment"
+            app:enterAnim="@anim/slide_right_to_left_enter" />
         <action
             android:id="@+id/action_mainNoteFragment_to_noteFragment"
-            app:destination="@id/noteFragment" />
+            app:destination="@id/noteFragment"
+            app:enterAnim="@anim/slide_right_to_left_enter" />
     </fragment>
     <fragment
         android:id="@+id/addNewNoteFragment"
@@ -50,6 +55,7 @@
         <action
             android:id="@+id/action_addNewNoteFragment_to_mainNoteFragment"
             app:destination="@id/mainNoteFragment"
+            app:enterAnim="@android:anim/slide_in_left"
             app:launchSingleTop="true"
             app:popUpTo="@id/startNoteFragment" />
     </fragment>
@@ -61,6 +67,7 @@
         <action
             android:id="@+id/action_noteFragment_to_mainNoteFragment"
             app:destination="@id/mainNoteFragment"
+            app:enterAnim="@android:anim/slide_in_left"
             app:launchSingleTop="true"
             app:popUpTo="@id/startNoteFragment" />
     </fragment>
