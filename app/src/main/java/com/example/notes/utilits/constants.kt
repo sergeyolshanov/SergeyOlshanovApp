@@ -10,3 +10,6 @@ const val TYPE_ROOM = "type_room"
 const val TYPE_FIREBASE = "type_firebase"
 var EMAIL : String? = null
 var PASSWORD : String? = null
+const val ID_FIREBASE = "id_firebase"
+const val NAME = "name"
+const val TEXT = "text"

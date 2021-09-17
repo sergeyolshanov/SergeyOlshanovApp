@@ -15,11 +15,12 @@ class AddNewNoteViewModel(application: Application) : AndroidViewModel(applicati
     fun insert(note: AppNote, onSuccess:() -> Unit) =
         viewModelScope.launch(Dispatchers.IO) {
             REPOSITORY?.insert(note) {
-                launch{
+                onSuccess()
+                /*launch{
                     withContext(Dispatchers.Main) {
                         onSuccess()
                     }
-                }
+                }*/
             }
         }
 }
