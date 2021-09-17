@@ -19,5 +19,7 @@ class AppNoteRoomRepository(private val appNoteRoomDao: AppNoteRoomDao) : Databa
         onSuccess()
     }
 
-
+    override fun singOut() {
+        super.singOut()
+    }
 }

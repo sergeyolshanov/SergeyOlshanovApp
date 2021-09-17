@@ -1,10 +1,8 @@
 package com.example.notes.sergeyolshanovapp.module.app_notes.main_note
 
 import android.os.Bundle
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
@@ -37,6 +35,7 @@ class MainNoteFragment : Fragment() {
     }
 
     private fun initialisation() {
+        setHasOptionsMenu(true)
         mAdapter = MainNoteAdapter()
         mRecyclerView = mBinding?.recyclerView
         mRecyclerView?.adapter = mAdapter
@@ -64,6 +63,22 @@ class MainNoteFragment : Fragment() {
             bundle.putSerializable("note", note)
             APP_ACTIVITY?.navController?.navigate(R.id.action_mainNoteFragment_to_noteFragment, bundle)
         }
+    }
+
+    /**Отображение элемента корзины в меню*/
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.exit_action_menu, menu)
+    }
+
+    /**Слушаем клики по элементу корзины в меню*/
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId) {
+            R.id.button_exit -> {
+                mViewModel?.signOut()
+                    APP_ACTIVITY?.navController?.navigate(R.id.action_mainNoteFragment_to_startNoteFragment)
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 
 }
