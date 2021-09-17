@@ -2,17 +2,18 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt'
+    id 'com.google.gms.google-services'
 }
 
 
 android {
-    compileSdkVersion 31
-    buildToolsVersion '30.0.0'
+    compileSdk 31
+    buildToolsVersion '30.0.3'
 
     defaultConfig {
         applicationId "com.example.notes.sergeyolshanovapp"
-        minSdkVersion 21
-        targetSdkVersion 31
+        minSdk 21
+        targetSdk 31
         versionCode 1
         versionName "1.0"
 
@@ -95,7 +96,7 @@ dependencies {
 
     // Import the Firebase BoM
     implementation platform('com.google.firebase:firebase-bom:28.4.0')
-    implementation 'com.google.firebase:firebase-analytics'
+    implementation 'com.google.firebase:firebase-analytics-ktx'
     implementation 'com.google.firebase:firebase-core:19.0.1'
 
 }
