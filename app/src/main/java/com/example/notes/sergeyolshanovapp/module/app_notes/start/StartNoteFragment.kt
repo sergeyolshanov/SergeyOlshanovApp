@@ -27,15 +27,22 @@ class StartNoteFragment : Fragment() {
 
     override fun onStart() {
         super.onStart()
-        initialisation()
+        mViewModel = ViewModelProvider(this).get(StartNoteViewModel::class.java)
+        if (AppPreferences.getInitUser()) {
+            mViewModel?.initDatabase(AppPreferences.getTypeDB()) {
+                APP_ACTIVITY?.navController?.navigate(R.id.action_startNoteFragment_to_mainNoteFragment)
+            }
+        } else {
+            initialisation()
+        }
     }
 
     private fun initialisation() {
-        mViewModel = ViewModelProvider(this).get(StartNoteViewModel::class.java)
         mBinding?.buttonRoom?.setOnClickListener {
             mViewModel?.initDatabase(TYPE_ROOM) {
+                AppPreferences.setInitUser(true)
+                AppPreferences.setTypeDB(TYPE_ROOM)
                 APP_ACTIVITY?.navController?.navigate(R.id.action_startNoteFragment_to_mainNoteFragment)
-
             }
         }
 
@@ -48,6 +55,8 @@ class StartNoteFragment : Fragment() {
                     EMAIL = inputEmail
                     PASSWORD = inputPassword
                     mViewModel?.initDatabase(TYPE_FIREBASE) {
+                        AppPreferences.setInitUser(true)
+                        AppPreferences.setTypeDB(TYPE_FIREBASE)
                         APP_ACTIVITY?.navController?.navigate(R.id.action_startNoteFragment_to_mainNoteFragment)
                     }
                 } else {

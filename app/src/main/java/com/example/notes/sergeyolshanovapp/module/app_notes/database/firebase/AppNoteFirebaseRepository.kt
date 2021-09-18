@@ -35,16 +35,30 @@ class AppNoteFirebaseRepository : DatabaseNoteRepository {
     }
 
     override fun connectToDatabase(onSuccess: () -> Unit, onFail: (String) -> Unit) {
-        AUTH?.signInWithEmailAndPassword(EMAIL?: "", PASSWORD?: "")
-            ?.addOnSuccessListener { onSuccess() }
-            ?.addOnFailureListener {
-                AUTH?.createUserWithEmailAndPassword(EMAIL?: "", PASSWORD?: "")!!
-                    .addOnSuccessListener { onSuccess() }
-                    .addOnFailureListener { onFail(it.message.toString()) }
-            }
+        if(AppPreferences.getInitUser()) {
+            initRefs()
+            onSuccess()
+        } else{
+            AUTH?.signInWithEmailAndPassword(EMAIL?: "", PASSWORD?: "")
+                ?.addOnSuccessListener {
+                    initRefs()
+                    onSuccess() }
+                ?.addOnFailureListener {
+                    AUTH?.createUserWithEmailAndPassword(EMAIL?: "", PASSWORD?: "")!!
+                        .addOnSuccessListener {
+                            initRefs()
+                            onSuccess() }
+                        .addOnFailureListener { onFail(it.message.toString()) }
+                }
+        }
+
+
+    }
+
+    private fun initRefs() {
         CURRENT_ID = AUTH?.currentUser?.uid.toString()
         REF_DATABASE = FirebaseDatabase.getInstance().reference
-            .child(CURRENT_ID?: "")
+            .child(CURRENT_ID ?: "")
     }
 
     override fun singOut() {
