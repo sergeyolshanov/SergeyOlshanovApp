@@ -7,6 +7,7 @@ import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.example.notes.sergeyolshanovapp.databinding.ActivityMainBinding
 import com.example.notes.utilits.APP_ACTIVITY
+import com.example.notes.utilits.AppPreferences
 import com.google.firebase.FirebaseApp
 
 
@@ -26,6 +27,7 @@ class MainActivity : AppCompatActivity() {
         navController = Navigation.findNavController(this, R.id.nav_host_fragment)
         setSupportActionBar(mToolbar)
         title = getString(R.string.main_title)
+        AppPreferences.getPreference(this)
     }
 
     override fun onDestroy() {

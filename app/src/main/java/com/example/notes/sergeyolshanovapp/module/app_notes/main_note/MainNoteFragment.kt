@@ -10,6 +10,7 @@ import com.example.notes.sergeyolshanovapp.R
 import com.example.notes.sergeyolshanovapp.databinding.FragmentMainNoteBinding
 import com.example.notes.sergeyolshanovapp.module.app_notes.model.AppNote
 import com.example.notes.utilits.APP_ACTIVITY
+import com.example.notes.utilits.AppPreferences
 
 class MainNoteFragment : Fragment() {
 
@@ -75,7 +76,8 @@ class MainNoteFragment : Fragment() {
         when(item.itemId) {
             R.id.button_exit -> {
                 mViewModel?.signOut()
-                    APP_ACTIVITY?.navController?.navigate(R.id.action_mainNoteFragment_to_startNoteFragment)
+                AppPreferences.setInitUser(false)
+                APP_ACTIVITY?.navController?.navigate(R.id.action_mainNoteFragment_to_startNoteFragment)
             }
         }
         return super.onOptionsItemSelected(item)
